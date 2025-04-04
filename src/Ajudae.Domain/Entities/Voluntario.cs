@@ -14,7 +14,7 @@ public class Voluntario : Entity, IAggregateRoot
     public bool Presencial { get; set; }
     public bool Ativo { get; set; }
     public List<Atividade> Atividades { get; set; }
-    public List<Recompensa> Recompensas { get; set; }
+    public List<RecompensaItem> Recompensas { get; set; }
 
     public Voluntario() { }
 
@@ -26,4 +26,10 @@ public class Voluntario : Entity, IAggregateRoot
         AreaVoluntariado = areaVoluntariado;
         Presencial = presencial;
     }
+}
+
+public class RecompensaItem
+{
+    public int RecompensaId { get; set; }
+    public int VoluntarioId { get; set; }
 }
