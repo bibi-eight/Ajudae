@@ -14,4 +14,7 @@ public class Recompensa : Entity
         Nome = nome;
         ValorPontos = valorPontos;
     }
+    
+    public void AtribuirNome(string nome) => Nome = nome;
+    public void AtribuirValorPontos(int valor) => ValorPontos = valor;
 }
