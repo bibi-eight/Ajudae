@@ -20,4 +20,11 @@ public class Atividade : Entity, IAggregateRoot
         Pontos = pontos;
         Status = StatusEnum.Pendente;
     }
+    
+    public void AtribuirTitulo(string titulo) => Titulo = titulo;
+    public void AtribuirDescricao(string descricao) => Descricao = descricao;
+    
+    public void AtribuirPontos(int pontos) => Pontos = pontos;
+    public void AtribuirStatus(StatusEnum status) => Status = status;
+    public void AtribuirPrazo(DateTime prazo) => Prazo = prazo;
 }
