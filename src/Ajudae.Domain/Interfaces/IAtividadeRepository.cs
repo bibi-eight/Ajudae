@@ -5,5 +5,5 @@ namespace Ajudae.Domain.Interfaces;
 
 public interface IAtividadeRepository : IRepository<Atividade>
 {
-    Task<Atividade> ObterAtividadesPorStatus(int status);
+    Task<IEnumerable<Atividade>> ObterAtividadesPorStatus(int status);
 }
