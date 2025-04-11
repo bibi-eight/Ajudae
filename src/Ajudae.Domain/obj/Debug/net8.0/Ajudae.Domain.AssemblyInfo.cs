@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ajudae.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14605a6059869b6f3ad76f592e87bd5706f880ce")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c5622827a3e03bfa53759a4e51e49e7b298012d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ajudae.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ajudae.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

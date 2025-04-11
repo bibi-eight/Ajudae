@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ajudae.Infra")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bdeeaa39265444debfc55ca93ea2c3b98504abf1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c5622827a3e03bfa53759a4e51e49e7b298012d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ajudae.Infra")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ajudae.Infra")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
