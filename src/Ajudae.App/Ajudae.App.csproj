@@ -25,4 +25,8 @@
       <Folder Include="Controllers\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Ajudae.Domain\Ajudae.Domain.csproj" />
+    </ItemGroup>
+
 </Project>
