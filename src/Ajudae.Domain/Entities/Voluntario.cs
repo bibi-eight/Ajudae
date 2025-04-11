@@ -14,7 +14,7 @@ public class Voluntario : Entity, IAggregateRoot
     public bool Presencial { get; set; }
     public bool Ativo { get; set; }
     public ICollection<Atividade> atividades { get; set; }
-    public ICollection<RecompensaItem> recompensas { get; set; }
+    public ICollection<Recompensa> recompensas { get; set; }
 
     public Voluntario()
     {
@@ -50,7 +50,7 @@ public class Voluntario : Entity, IAggregateRoot
         }
     }
 
-    public void AdicionarRecompensa(RecompensaItem recompensa)
+    public void AdicionarRecompensa(Recompensa recompensa)
     {
         recompensas.Add(recompensa);
     }
