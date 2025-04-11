@@ -12,7 +12,7 @@ public class AtividadeModel
     public string Descricao { get; set; }
     
     [Required(ErrorMessage = "O valor mínimo de pontos é 1")]
-    [MaxLength(1)]
+    [MinLength(1)]
     public int Pontos { get; set; }
     
     public StatusEnum Status { get; set; }
