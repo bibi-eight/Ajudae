@@ -9,6 +9,10 @@
     <ItemGroup>
         <PackageReference Include="EstartandoDevs.Core" Version="1.0.0" />
         <PackageReference Include="EstartandoDevsWebApi.Core" Version="1.0.0" />
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.8" />
         <PackageReference Include="MediatR" Version="8.1.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="8.0.8" />
@@ -26,7 +30,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Ajudae.Autenticacao\Ajudae.Autenticacao.csproj" />
       <ProjectReference Include="..\Ajudae.Domain\Ajudae.Domain.csproj" />
+      <ProjectReference Include="..\Ajudae.Infra\Ajudae.Infra.csproj" />
     </ItemGroup>
 
 </Project>
