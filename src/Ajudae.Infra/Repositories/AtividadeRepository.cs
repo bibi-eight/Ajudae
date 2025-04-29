@@ -23,6 +23,17 @@ public class AtividadeRepository : IAtividadeRepository
         return await _context.Atividades.Where(x => x.Status == (StatusEnum)status).ToListAsync();
     }
 
+    public void AdicionarRecompensa(Recompensa recompensa)
+    {
+        _context.Recompensas.Add(recompensa);
+    }
+
+    public void ExcluirRecompensa(Guid recompensaId)
+    {
+        var recompensa = _context.Recompensas.FirstOrDefault(x => x.Id == recompensaId);
+        _context.Recompensas.Remove(recompensa);
+    }
+
     public async Task<Atividade> ObterPorId(Guid Id)
     {
         return await _context.Atividades.FirstOrDefaultAsync(x => x.Id == Id);
