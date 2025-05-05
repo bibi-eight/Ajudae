@@ -8,4 +8,5 @@ public interface IVoluntarioRepository : IRepository<Voluntario>
     Task<IEnumerable<Voluntario>> ObterVoluntariosAtivos();
     Task<IEnumerable<Voluntario>> ObterVoluntariosInativos();
     Task<IEnumerable<Voluntario>> ObterVoluntarios();
+    Task<bool> ExisteVoluntario(string email);
 }

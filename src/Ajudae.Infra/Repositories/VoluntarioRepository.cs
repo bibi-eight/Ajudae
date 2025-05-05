@@ -52,7 +52,12 @@ public class VoluntarioRepository : IVoluntarioRepository
     {
         return await _context.Voluntarios.ToListAsync();
     }
-    
+
+    public async Task<bool> ExisteVoluntario(string email)
+    {
+        return await _context.Voluntarios.AnyAsync(x => x.Email == email);
+    }
+
     public void Dispose()
     {
         _context?.Dispose();
