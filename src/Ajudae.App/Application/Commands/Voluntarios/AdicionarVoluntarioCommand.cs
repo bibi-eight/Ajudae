@@ -34,12 +34,14 @@ public class AdicionarVoluntarioCommand : Command
         {
             RuleFor(x => x.NomeCompleto)
                 .NotEmpty().WithMessage("A propriedade nome é obrigatória")
-                .NotNull().WithMessage("A propriedade nome é obrigatória");        
+                .NotNull().WithMessage("A propriedade nome é obrigatória");
             
+            //TODO : fazer teste pra quebrar isso
             RuleFor(x => x.Email)
                 .NotEmpty().WithMessage("O e-mail é obrigatório.")
                 .EmailAddress().WithMessage("O e-mail informado não é válido.");
-
+            
+            //TODO : fazer teste pra quebrar isso
             RuleFor(x => x.Telefone)
                 .NotEmpty().WithMessage("O telefone é obrigatório.")
                 .Matches(@"^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$")
