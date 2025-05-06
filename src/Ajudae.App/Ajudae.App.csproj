@@ -26,7 +26,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Application\Commands\Atividades\" />
       <Folder Include="Controllers\" />
     </ItemGroup>
 
