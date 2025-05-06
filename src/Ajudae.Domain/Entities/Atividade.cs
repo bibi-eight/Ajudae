@@ -18,7 +18,7 @@ public class Atividade : Entity, IAggregateRoot
         Titulo = titulo;
         Descricao = descricao;
         Pontos = pontos;
-        Status = StatusEnum.Pendente;
+        Status = StatusEnum.Nova;
     }
     
     public void AtribuirTitulo(string titulo) => Titulo = titulo;
