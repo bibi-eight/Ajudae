@@ -34,6 +34,11 @@ public class AtividadeRepository : IAtividadeRepository
         _context.Recompensas.Remove(recompensa);
     }
 
+    public async Task<bool> ExisteAtividade(string Titulo)
+    {
+        return await _context.Atividades.AnyAsync(x => x.Titulo == Titulo);
+    }
+
     public async Task<Atividade> ObterPorId(Guid Id)
     {
         return await _context.Atividades.FirstOrDefaultAsync(x => x.Id == Id);
