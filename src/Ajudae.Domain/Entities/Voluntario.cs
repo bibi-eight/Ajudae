@@ -45,6 +45,12 @@ public class Voluntario : Entity, IAggregateRoot
         atividades.Add(atividade);
     }
 
+    public void ConcluirAtividade(Atividade atividade)
+    {
+        atividade.AtribuirStatus(StatusEnum.Concluido);
+        AtividadesFeitas++;
+    }
+    
     public void AdicionarRecompensa(Recompensa recompensa)
     {
         recompensas.Add(recompensa);
