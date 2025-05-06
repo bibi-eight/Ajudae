@@ -43,11 +43,6 @@ public class Voluntario : Entity, IAggregateRoot
     public void AdicionarAtividade(Atividade atividade)
     {
         atividades.Add(atividade);
-
-        if (atividade.Status == StatusEnum.Concluido)
-        {
-            AtividadesFeitas++;
-        }
     }
 
     public void AdicionarRecompensa(Recompensa recompensa)
