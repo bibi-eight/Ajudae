@@ -6,14 +6,16 @@ namespace Ajudae.App.Application.Commands.Voluntarios;
 
 public class EditarVoluntarioCommand : Command
 {
+    public Guid Id { get; set; }
     public string NomeCompleto { get; set; }
     public string Email { get; set; }
     public string Telefone { get; set; }
     public AreaVoluntariadoEnum AreaVoluntariado { get; set; }
     public bool Presencial { get; set; }
     
-    public EditarVoluntarioCommand(string nomeCompleto, string email, string telefone, AreaVoluntariadoEnum areaVoluntariado, bool presencial)
+    public EditarVoluntarioCommand( Guid id, string nomeCompleto, string email, string telefone, AreaVoluntariadoEnum areaVoluntariado, bool presencial)
     {
+        Id = id;
         NomeCompleto = nomeCompleto;
         Email = email;
         Telefone = telefone;
