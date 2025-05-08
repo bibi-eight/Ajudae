@@ -11,11 +11,13 @@ public class AtividadeMapping : IEntityTypeConfiguration<Atividade>
         builder.ToTable("Atividades");
         builder.HasKey(x => x.Id);
         
-        
         builder.Property(x => x.Titulo).IsRequired();
         builder.Property(x => x.Descricao).IsRequired();
         builder.Property(x => x.Status).IsRequired();
         builder.Property(x => x.Pontos);
         builder.Property(x => x.Prazo);
+        
+        builder.HasMany(x => x.voluntarios).WithMany(x => x.atividades);
+        
     }
 }

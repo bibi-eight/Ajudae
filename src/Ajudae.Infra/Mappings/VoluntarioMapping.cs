@@ -19,5 +19,6 @@ public class VoluntarioMapping : IEntityTypeConfiguration<Voluntario>
         builder.Property(x => x.Ativo).HasDefaultValueSql();
         builder.Property(x => x.Pontuacao);
 
+        builder.HasMany(x => x.atividades).WithMany(x => x.voluntarios);
     }
 }

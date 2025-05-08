@@ -10,7 +10,8 @@ public class Atividade : Entity, IAggregateRoot
     public int Pontos { get; set; }
     public StatusEnum Status { get; set; }
     public DateTime Prazo { get; set; }
-
+    public ICollection<Voluntario> voluntarios { get; set; }
+    
     public Atividade() { }
 
     public Atividade(string titulo, string descricao, int pontos, StatusEnum status)
