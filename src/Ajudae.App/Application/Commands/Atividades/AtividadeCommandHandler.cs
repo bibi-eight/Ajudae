@@ -71,6 +71,6 @@ public class AtividadeCommandHandler : CommandHandler,
 
     public void Dispose()
     {
-        throw new NotImplementedException();
+        _atividadeRepository?.Dispose();
     }
 }
