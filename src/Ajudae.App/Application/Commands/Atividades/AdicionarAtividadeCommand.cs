@@ -9,15 +9,13 @@ public class AdicionarAtividadeCommand : Command
     public string Titulo { get; set; }
     public string Descricao { get; set; }
     public int Pontos { get; set; }
-    public StatusEnum Status { get; set; }
     public string Prazo { get; set; }
 
-    public AdicionarAtividadeCommand(string titulo, string descricao, int pontos, StatusEnum status)
+    public AdicionarAtividadeCommand(string titulo, string descricao, int pontos)
     {
         Titulo = titulo;
         Descricao = descricao;
         Pontos = pontos;
-        Status = status;
     }
 
     public override bool EstaValido()
