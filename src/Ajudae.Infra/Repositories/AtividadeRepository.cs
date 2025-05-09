@@ -18,10 +18,10 @@ public class AtividadeRepository : IAtividadeRepository
 
     public IUnitOfWorks UnitOfWork => _context;
     
-    public async Task<IEnumerable<Atividade>> ObterAtividadesPorStatus(int status)
-    {
-        return await _context.Atividades.Where(x => x.Status == (StatusEnum)status).ToListAsync();
-    }
+    // public async Task<IEnumerable<Atividade>> ObterAtividadesPorStatus(int status)
+    // {
+    //     return await _context.Atividades.Where(x => x.Status == (StatusEnum)status).ToListAsync();
+    // }
 
     public void AdicionarRecompensa(Recompensa recompensa)
     {
