@@ -14,7 +14,7 @@ public class VoluntarioViewModel
     public int AtividadesFeitas { get; set; }
     public bool Presencial { get; set; }
     public bool Ativo { get; set; }
-    public IEnumerable<AtividadeViewModel> Atividades { get; set; }
+    public IEnumerable<AtividadeVoluntarioViewModel> Atividades { get; set; }
     public IEnumerable<RecompensaViewModel> Recompensas { get; set; }
 
     public static VoluntarioViewModel Mapear(Voluntario voluntario)
@@ -30,7 +30,7 @@ public class VoluntarioViewModel
             AtividadesFeitas = voluntario.AtividadesFeitas,
             Presencial = voluntario.Presencial,
             Ativo = voluntario.Ativo,
-            Atividades = voluntario.atividades.Select(AtividadeViewModel.Mapear).ToList(),
+            Atividades = voluntario.atividades.Select(AtividadeVoluntarioViewModel.Mapear).ToList(),
             Recompensas = voluntario.recompensas.Select(RecompensaViewModel.Mapear).ToList()
         };
     }

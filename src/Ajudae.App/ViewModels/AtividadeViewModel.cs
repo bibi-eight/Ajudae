@@ -9,7 +9,6 @@ public class AtividadeViewModel
     public string Titulo { get; set; }
     public string Descricao { get; set; }
     public int Pontos { get; set; }
-    public StatusEnum Status { get; set; }
     public string Prazo { get; set; }
 
     public static AtividadeViewModel Mapear(Atividade atividade)
@@ -20,8 +19,24 @@ public class AtividadeViewModel
             Titulo = atividade.Titulo,
             Descricao = atividade.Descricao,
             Pontos = atividade.Pontos,
-            Status = atividade.Status,
             Prazo = atividade.Prazo.ToString(),
+        };
+    }
+}
+
+public class AtividadeVoluntarioViewModel
+{
+    public int AtividadeId { get; set; }
+    public string Titulo { get; set; }
+    public StatusEnum Status { get; set; }
+
+    public static AtividadeVoluntarioViewModel Mapear(AtividadeVoluntario a)
+    {
+        return new AtividadeVoluntarioViewModel()
+        {
+            AtividadeId = a.AtividadeId,
+            Titulo = a.Atividade.Titulo,
+            Status = a.Status
         };
     }
 }
