@@ -9,7 +9,7 @@ public class Atividade : Entity, IAggregateRoot
     public string Descricao { get; set; }
     public int Pontos { get; set; }
     public DateTime Prazo { get; set; }
-    public ICollection<Voluntario> voluntarios { get; set; }
+    public ICollection<AtividadeVoluntario> voluntarios { get; set; }
     
     public Atividade() { }
 
@@ -25,4 +25,15 @@ public class Atividade : Entity, IAggregateRoot
     
     public void AtribuirPontos(int pontos) => Pontos = pontos;
     public void AtribuirPrazo(DateTime prazo) => Prazo = prazo;
+}
+
+public class AtividadeVoluntario
+{
+    public int VoluntarioId { get; set; }
+    public Voluntario Voluntario { get; set; }
+
+    public int AtividadeId { get; set; }
+    public Atividade Atividade { get; set; }
+    
+    public StatusEnum Status { get; set; }
 }

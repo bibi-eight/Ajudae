@@ -13,12 +13,12 @@ public class Voluntario : Entity, IAggregateRoot
     public int AtividadesFeitas { get; set; }
     public bool Presencial { get; set; }
     public bool Ativo { get; set; }
-    public ICollection<Atividade> atividades { get; set; }
+    public ICollection<AtividadeVoluntario> atividades { get; set; }
     public ICollection<Recompensa> recompensas { get; set; }
 
     public Voluntario()
     {
-        atividades = new List<Atividade>();
+        atividades = new List<AtividadeVoluntario>();
     }
 
     public Voluntario(string nomeCompleto, string email, string telefone, AreaVoluntariadoEnum areaVoluntariado, bool presencial)
@@ -39,17 +39,7 @@ public class Voluntario : Entity, IAggregateRoot
     public void TornarRemoto(bool presencial) => Presencial = false;
     public void AtivarVoluntario() => Ativo = true;
     public void DesativarVoluntario() => Ativo = false;
-
-    public void AdicionarAtividade(Atividade atividade)
-    {
-        atividades.Add(atividade);
-    }
-
-    public void ConcluirAtividade(Atividade atividade)
-    {
-        atividade.AtribuirStatus(StatusEnum.Concluido);
-        AtividadesFeitas++;
-    }
+    
     
     public void AdicionarRecompensa(Recompensa recompensa)
     {
