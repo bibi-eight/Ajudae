@@ -39,8 +39,13 @@ public class Voluntario : Entity, IAggregateRoot
     public void TornarRemoto(bool presencial) => Presencial = false;
     public void AtivarVoluntario() => Ativo = true;
     public void DesativarVoluntario() => Ativo = false;
-    
-    
+
+    public void AdicionarAtividade(AtividadeVoluntario atividade)
+    {
+        atividades.Add(atividade);
+        
+        atividade.AtribuirStatus(StatusEnum.Pendente);
+    }
     public void AdicionarRecompensa(Recompensa recompensa)
     {
         recompensas.Add(recompensa);

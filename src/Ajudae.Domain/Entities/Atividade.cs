@@ -36,4 +36,6 @@ public class AtividadeVoluntario
     public Atividade Atividade { get; set; }
     
     public StatusEnum Status { get; set; }
+    
+    public void AtribuirStatus(StatusEnum status) => Status = status;
 }
