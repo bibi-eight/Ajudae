@@ -46,6 +46,7 @@ public class AtividadeCommandHandler : CommandHandler,
 
     }
 
+    // não posso editar uma atividade já vinculada a um voluntario 
     public async Task<ValidationResult> Handle(EditarAtividadeCommand request, CancellationToken cancellationToken)
     {
         if (!request.EstaValido()) return request.ValidationResult;
