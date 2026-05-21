@@ -4168,19 +4168,19 @@
     ]
   },
   "packageFolders": {
-    "/home/brenda/.nuget/packages/": {}
+    "/home/brenda-brito/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/brenda/Estudos/Ajudae/src/Ajudae.Domain/Ajudae.Domain.csproj",
+      "projectUniqueName": "/home/brenda-brito/Estudos/Ajudae/src/Ajudae.Domain/Ajudae.Domain.csproj",
       "projectName": "Ajudae.Domain",
-      "projectPath": "/home/brenda/Estudos/Ajudae/src/Ajudae.Domain/Ajudae.Domain.csproj",
-      "packagesPath": "/home/brenda/.nuget/packages/",
-      "outputPath": "/home/brenda/Estudos/Ajudae/src/Ajudae.Domain/obj/",
+      "projectPath": "/home/brenda-brito/Estudos/Ajudae/src/Ajudae.Domain/Ajudae.Domain.csproj",
+      "packagesPath": "/home/brenda-brito/.nuget/packages/",
+      "outputPath": "/home/brenda-brito/Estudos/Ajudae/src/Ajudae.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/brenda/.nuget/NuGet/NuGet.Config"
+        "/home/brenda-brito/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -4203,7 +4203,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -4254,7 +4255,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/brenda/.dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/brenda-brito/.dotnet/sdk/9.0.308/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -46,6 +46,13 @@ public class Voluntario : Entity, IAggregateRoot
         
         atividade.AtribuirStatus(StatusEnum.Pendente);
     }
+    
+    public void RemoverAtividade(AtividadeVoluntario atividade)
+    {
+        atividades.Remove(atividade);
+        
+        atividade.AtribuirStatus(StatusEnum.Nova);
+    }
     public void AdicionarRecompensa(Recompensa recompensa)
     {
         recompensas.Add(recompensa);
