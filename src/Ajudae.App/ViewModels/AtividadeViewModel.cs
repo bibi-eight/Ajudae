@@ -26,7 +26,7 @@ public class AtividadeViewModel
 
 public class AtividadeVoluntarioViewModel
 {
-    public int AtividadeId { get; set; }
+    public Guid AtividadeId { get; set; }
     public string Titulo { get; set; }
     public StatusEnum Status { get; set; }
 

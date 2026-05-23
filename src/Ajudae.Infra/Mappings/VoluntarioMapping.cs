@@ -16,7 +16,7 @@ public class VoluntarioMapping : IEntityTypeConfiguration<Voluntario>
         builder.Property(x => x.Telefone).IsRequired();
         builder.Property(x => x.AreaVoluntariado).IsRequired();
         builder.Property(x => x.Presencial).IsRequired();
-        builder.Property(x => x.Ativo).HasDefaultValueSql();
+        builder.Property(x => x.Ativo).HasDefaultValueSql("0");
         builder.Property(x => x.Pontuacao);
 
         builder

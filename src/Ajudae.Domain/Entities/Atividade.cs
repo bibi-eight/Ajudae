@@ -29,10 +29,10 @@ public class Atividade : Entity, IAggregateRoot
 
 public class AtividadeVoluntario
 {
-    public int VoluntarioId { get; set; }
+    public Guid VoluntarioId { get; set; }
     public Voluntario Voluntario { get; set; }
 
-    public int AtividadeId { get; set; }
+    public Guid AtividadeId { get; set; }
     public Atividade Atividade { get; set; }
     
     public StatusEnum Status { get; set; }
