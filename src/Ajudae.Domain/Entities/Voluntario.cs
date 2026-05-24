@@ -19,6 +19,7 @@ public class Voluntario : Entity, IAggregateRoot
     public Voluntario()
     {
         atividades = new List<AtividadeVoluntario>();
+        recompensas = new List<Recompensa>();
     }
 
     public Voluntario(string nomeCompleto, string email, string telefone, AreaVoluntariadoEnum areaVoluntariado, bool presencial)
