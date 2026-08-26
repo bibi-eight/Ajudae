@@ -53,8 +53,6 @@ public class VoluntarioCommandHandler : CommandHandler,
         voluntario.AtribuirNomeCompleto(request.NomeCompleto);
         voluntario.AtribuirEmail(request.Email);
         voluntario.AtribuirTelefone(request.Telefone);
-        voluntario.AtribuirAreaVoluntariado(request.AreaVoluntariado);
-        voluntario.AtribuirModeloDeTrabalho(request.ModeloDeTrabalho);
         
         _repository.Atualizar(voluntario);
         

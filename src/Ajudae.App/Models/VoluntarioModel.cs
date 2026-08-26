@@ -17,6 +17,16 @@ public class VoluntarioModel
     [Required(ErrorMessage = "O campo {0} é obrigatório")]
     public AreaVoluntariadoEnum AreaVoluntariado { get; set; }
     
-    public bool Presencial { get; set; }
+    public ModeloDeTrabalhoEnum ModeloDeTrabalho { get; set; }
     public bool Ativo { get; set; }
+}
+
+public class ModeloDeTrabalhoModel
+{
+    public ModeloDeTrabalhoEnum ModeloDeTrabalho { get; set; }
+}
+
+public class AreaVoluntariadoModel
+{
+    public AreaVoluntariadoEnum AreaVoluntariado { get; set; }
 }

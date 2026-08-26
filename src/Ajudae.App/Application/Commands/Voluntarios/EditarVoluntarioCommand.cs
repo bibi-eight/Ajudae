@@ -10,17 +10,13 @@ public class EditarVoluntarioCommand : Command
     public string NomeCompleto { get; set; }
     public string Email { get; set; }
     public string Telefone { get; set; }
-    public AreaVoluntariadoEnum AreaVoluntariado { get; set; }
-    public ModeloDeTrabalhoEnum ModeloDeTrabalho { get; set; }
     
-    public EditarVoluntarioCommand( Guid id, string nomeCompleto, string email, string telefone, AreaVoluntariadoEnum areaVoluntariado, ModeloDeTrabalhoEnum modeloDeTrabalho)
+    public EditarVoluntarioCommand( Guid id, string nomeCompleto, string email, string telefone)
     {
         Id = id;
         NomeCompleto = nomeCompleto;
         Email = email;
         Telefone = telefone;
-        AreaVoluntariado = areaVoluntariado;
-        ModeloDeTrabalho = modeloDeTrabalho;
     }
 
     public override bool EstaValido()
@@ -45,10 +41,6 @@ public class EditarVoluntarioCommand : Command
                 .NotEmpty().WithMessage("O telefone é obrigatório.")
                 .Matches(@"^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$")
                 .WithMessage("O telefone informado não é válido.");
-                
-            RuleFor(x => x.AreaVoluntariado)
-                .NotEqual(AreaVoluntariadoEnum.Nenhum)
-                .WithMessage("Selecione uma área de voluntariado.");
         }
     }
 }
