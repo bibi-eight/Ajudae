@@ -75,34 +75,7 @@ public class VoluntarioTest
             // Assert
             Assert.Equal(pontosEsperados, voluntario.Pontuacao);
         }
-
-        [Fact]
-        public void TornarPresencial_DeveMudarParaTrue()
-        {
-            // Arrange
-            var voluntario = new Voluntario();
-            voluntario.TornarRemoto(true);
-
-            // Act
-            voluntario.TornarPresencial(true);
-
-            // Assert
-            Assert.True(voluntario.Presencial);
-        }
-
-        [Fact]
-        public void TornarRemoto_DeveMudarParaFalse()
-        {
-            // Arrange
-            var voluntario = new Voluntario();
-            voluntario.TornarPresencial(true); 
-
-            // Act
-            voluntario.TornarRemoto(true);
-
-            // Assert
-            Assert.False(voluntario.Presencial);
-        }
+        
 
         [Fact]
         public void AtivarVoluntario_DeveMudarAtivoParaTrue()

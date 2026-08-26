@@ -11,16 +11,16 @@ public class EditarVoluntarioCommand : Command
     public string Email { get; set; }
     public string Telefone { get; set; }
     public AreaVoluntariadoEnum AreaVoluntariado { get; set; }
-    public bool Presencial { get; set; }
+    public ModeloDeTrabalhoEnum ModeloDeTrabalho { get; set; }
     
-    public EditarVoluntarioCommand( Guid id, string nomeCompleto, string email, string telefone, AreaVoluntariadoEnum areaVoluntariado, bool presencial)
+    public EditarVoluntarioCommand( Guid id, string nomeCompleto, string email, string telefone, AreaVoluntariadoEnum areaVoluntariado, ModeloDeTrabalhoEnum modeloDeTrabalho)
     {
         Id = id;
         NomeCompleto = nomeCompleto;
         Email = email;
         Telefone = telefone;
         AreaVoluntariado = areaVoluntariado;
-        Presencial = presencial;
+        ModeloDeTrabalho = modeloDeTrabalho;
     }
 
     public override bool EstaValido()

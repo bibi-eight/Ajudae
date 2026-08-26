@@ -29,7 +29,7 @@ public class VoluntarioCommandHandler : CommandHandler,
             return ValidationResult;
         }
         
-        var voluntario = new Voluntario(request.NomeCompleto, request.Email, request.Telefone, request.AreaVoluntariado, request.Presencial);
+        var voluntario = new Voluntario(request.NomeCompleto, request.Email, request.Telefone, request.AreaVoluntariado, request.ModeloDeTrabalho);
         
         _repository.Adicionar(voluntario);
 
@@ -54,9 +54,7 @@ public class VoluntarioCommandHandler : CommandHandler,
         voluntario.AtribuirEmail(request.Email);
         voluntario.AtribuirTelefone(request.Telefone);
         voluntario.AtribuirAreaVoluntariado(request.AreaVoluntariado);
-
-        if(request.Presencial) voluntario.AtivarVoluntario();
-        if(!request.Presencial) voluntario.DesativarVoluntario();
+        voluntario.AtribuirModeloDeTrabalho(request.ModeloDeTrabalho);
         
         _repository.Atualizar(voluntario);
         

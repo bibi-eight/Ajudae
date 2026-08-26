@@ -11,7 +11,7 @@ public class Voluntario : Entity, IAggregateRoot
     public AreaVoluntariadoEnum AreaVoluntariado { get; set; }
     public int Pontuacao { get; set; }
     public int AtividadesFeitas { get; set; }
-    public bool Presencial { get; set; }
+    public ModeloDeTrabalhoEnum ModeloDeTrabalho { get; set; }
     public bool Ativo { get; set; }
     public ICollection<AtividadeVoluntario> atividades { get; set; }
     public ICollection<Recompensa> recompensas { get; set; }
@@ -22,13 +22,13 @@ public class Voluntario : Entity, IAggregateRoot
         recompensas = new List<Recompensa>();
     }
 
-    public Voluntario(string nomeCompleto, string email, string telefone, AreaVoluntariadoEnum areaVoluntariado, bool presencial)
+    public Voluntario(string nomeCompleto, string email, string telefone, AreaVoluntariadoEnum areaVoluntariado, ModeloDeTrabalhoEnum modelo)
     {
         NomeCompleto = nomeCompleto;
         Email = email;
         Telefone = telefone;
         AreaVoluntariado = areaVoluntariado;
-        Presencial = presencial;
+        ModeloDeTrabalho = modelo;
     }
     
     public void AtribuirNomeCompleto(string nomeCompleto) => NomeCompleto = nomeCompleto;
@@ -36,8 +36,7 @@ public class Voluntario : Entity, IAggregateRoot
     public void AtribuirTelefone(string telefone) => Telefone = telefone;
     public void AtribuirAreaVoluntariado(AreaVoluntariadoEnum areaVoluntariado) => AreaVoluntariado = areaVoluntariado;
     public void AtribuirPontuacao(int pontos) => Pontuacao = pontos;
-    public void TornarPresencial(bool presencial) => Presencial = true;
-    public void TornarRemoto(bool presencial) => Presencial = false;
+    public void AtribuirModeloDeTrabalho(ModeloDeTrabalhoEnum modeloDeTrabalho) => ModeloDeTrabalho = modeloDeTrabalho;
     public void AtivarVoluntario() => Ativo = true;
     public void DesativarVoluntario() => Ativo = false;
 

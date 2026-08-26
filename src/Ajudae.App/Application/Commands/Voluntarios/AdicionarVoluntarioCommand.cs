@@ -11,15 +11,15 @@ public class AdicionarVoluntarioCommand : Command
     public string Email { get; set; }
     public string Telefone { get; set; }
     public AreaVoluntariadoEnum AreaVoluntariado { get; set; }
-    public bool Presencial { get; set; }
+    public ModeloDeTrabalhoEnum ModeloDeTrabalho { get; set; }
 
-    public AdicionarVoluntarioCommand(string nomeCompleto, string email, string telefone, AreaVoluntariadoEnum areaVoluntariado, bool presencial)
+    public AdicionarVoluntarioCommand(string nomeCompleto, string email, string telefone, AreaVoluntariadoEnum areaVoluntariado, ModeloDeTrabalhoEnum modeloDeTrabalho)
     {
         NomeCompleto = nomeCompleto;
         Email = email;
         Telefone = telefone;
         AreaVoluntariado = areaVoluntariado;
-        Presencial = presencial;
+        ModeloDeTrabalho = modeloDeTrabalho;
     }
 
     public override bool EstaValido()
