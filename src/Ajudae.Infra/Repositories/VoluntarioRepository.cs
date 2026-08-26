@@ -38,19 +38,9 @@ public class VoluntarioRepository : IVoluntarioRepository
         _context.Voluntarios.Remove(voluntario);
     }
 
-    public async Task<IEnumerable<Voluntario>> ObterVoluntariosAtivos()
+    public async Task<IEnumerable<Voluntario>> ObterVoluntarios(bool ativo)
     {
-        return await _context.Voluntarios.Where(x => x.Ativo == true).ToListAsync();
-    }
-
-    public async Task<IEnumerable<Voluntario>> ObterVoluntariosInativos()
-    {
-        return await _context.Voluntarios.Where(x => x.Ativo == false).ToListAsync();
-    }
-
-    public async Task<IEnumerable<Voluntario>> ObterVoluntarios()
-    {
-        return await _context.Voluntarios.ToListAsync();
+        return await _context.Voluntarios.Where(x => x.Ativo == ativo).ToListAsync();
     }
 
     public async Task<bool> ExisteVoluntario(string email)
