@@ -16,15 +16,6 @@ dessa forma corri atrás de uma ong que ja admirava o trabalho e me dispús a ou
 
 ### O tema
 
-A cada periodo o projeto de extensão define um tema para que possamos trabalhar.
-
-> O tema do segundo periodo (meu periodo) é : IDENTIFICAÇÃO DA SITUAÇÃO PROBLEMA
-
-Como solicitado pela PEX II, a ideia do projeto atual era trabalhar na identificação
-de situações-problema. Com isso em mente entrei em contato com a ong e me apresentei.
-Conversei com um dos educadores de lá e juntos descobrimos alguns problemas em que 
-eu poderia ajudar. 
-
 Dentro das dores ouvidas, a que me chamou atenção foi a necessidade de um serviço web
 para controlar o cadastro e acompanhamento dos voluntários da ong.  Imediatamente me
 dispús a cuidar da criação da api como desenvolvedora backend.
@@ -35,3 +26,35 @@ de estudos e todos os envolvidos no projeto estão devidamente informados disso.
 sendo esperado qualidade profissional e nenhum pagamento por esse trabalho. 
 
 ### É um projeto voluntário.
+
+---
+# Commits
+
+**Conventional Commits** é uma convenção para padronizar as mensagens de commit do Git, deixando o histórico do projeto mais organizado e fácil de entender.
+
+## Estrutura
+
+```text
+tipo: descrição
+```
+
+### Principais tipos
+
+* `feat` — adiciona uma nova funcionalidade
+* `fix` — corrige um bug
+* `docs` — alteração em documentação
+* `refactor` — alteração no código sem mudar comportamento
+* `test` — criação ou alteração de testes
+* `chore` — tarefas de manutenção/configuração
+
+## Exemplos
+
+```bash
+git commit -m "feat: adiciona cadastro de usuários"
+git commit -m "fix: corrige validação do login"
+git commit -m "docs: atualiza README"
+git commit -m "refactor: simplifica UserService"
+git commit -m "test: adiciona testes para UserService"
+```
+
+**Dica:** escreva a descrição de forma curta e objetiva, indicando o que foi alterado.
