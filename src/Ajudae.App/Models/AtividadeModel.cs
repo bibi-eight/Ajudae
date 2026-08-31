@@ -14,7 +14,15 @@ public class AtividadeModel
     [Required(ErrorMessage = "O valor mínimo de pontos é 1")]
     [MinLength(1)]
     public int Pontos { get; set; }
-    
+    public string Prazo { get; set; }
+}
+
+public class AtividadePrazoModel
+{
+    public string Prazo { get; set; }
+}
+
+public class AtividadeStatusModel
+{
     public StatusEnum Status { get; set; }
-    public DateTime Prazo { get; set; }
 }
