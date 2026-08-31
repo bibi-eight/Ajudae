@@ -6,7 +6,6 @@ using EstartandoDevsCore.Messages;
 using EstartandoDevsCore.Ultilities;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
-
 namespace Ajudae.Infra.Data;
 
 public class AjudaeContext : DbContext, IUnitOfWorks
@@ -16,6 +15,7 @@ public class AjudaeContext : DbContext, IUnitOfWorks
     public DbSet<Atividade> Atividades { get; set; }
     public DbSet<Voluntario> Voluntarios { get; set; }
     public DbSet<Recompensa> Recompensas { get; set; }
+    public DbSet<AtividadeVoluntario> AtividadeVoluntarios { get; set; }
 
     public AjudaeContext(DbContextOptions<AjudaeContext> options,
         IMediatorHandler mediatorHandler) : base(options)
