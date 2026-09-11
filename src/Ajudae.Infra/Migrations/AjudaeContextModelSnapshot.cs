@@ -127,15 +127,15 @@ namespace Ajudae.Infra.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ModeloDeTrabalho")
+                        .HasColumnType("int");
+
                     b.Property<string>("NomeCompleto")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Pontuacao")
                         .HasColumnType("int");
-
-                    b.Property<bool>("Presencial")
-                        .HasColumnType("bit");
 
                     b.Property<string>("Telefone")
                         .IsRequired()
@@ -149,7 +149,7 @@ namespace Ajudae.Infra.Migrations
             modelBuilder.Entity("Ajudae.Domain.Entities.AtividadeVoluntario", b =>
                 {
                     b.HasOne("Ajudae.Domain.Entities.Atividade", "Atividade")
-                        .WithMany("voluntarios")
+                        .WithMany("Voluntarios")
                         .HasForeignKey("AtividadeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -174,7 +174,7 @@ namespace Ajudae.Infra.Migrations
 
             modelBuilder.Entity("Ajudae.Domain.Entities.Atividade", b =>
                 {
-                    b.Navigation("voluntarios");
+                    b.Navigation("Voluntarios");
                 });
 
             modelBuilder.Entity("Ajudae.Domain.Entities.Voluntario", b =>
