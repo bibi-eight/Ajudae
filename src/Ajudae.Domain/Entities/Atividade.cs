@@ -31,8 +31,8 @@ public class Atividade : Entity, IAggregateRoot
     public void AdicionarVoluntario(Guid voluntarioId)
     {
         if (Voluntarios.Any(x => x.VoluntarioId == voluntarioId))
-            return;
-
+            throw new DomainException("Voluntário já está vinculado à atividade.");
+        
         Voluntarios.Add(new AtividadeVoluntario
         {
             VoluntarioId = voluntarioId,

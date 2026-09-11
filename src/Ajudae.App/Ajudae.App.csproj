@@ -31,4 +31,8 @@
       <ProjectReference Include="..\Ajudae.Infra\Ajudae.Infra.csproj" />
     </ItemGroup>
 
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
 </Project>

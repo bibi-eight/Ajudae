@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Ajudae.App.Controllers;
 
+[Route("ajudae/atividade")]
 public class AtividadeController : MainController
 {
     private readonly IAtividadeRepository _atividadeRepository;

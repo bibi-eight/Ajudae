@@ -41,7 +41,10 @@ public class AtividadeRepository : IAtividadeRepository
 
     public async Task<Atividade> ObterPorId(Guid Id)
     {
-        return await _context.Atividades.FirstOrDefaultAsync(x => x.Id == Id);
+        return await _context.Atividades
+            .Include(x => x.Voluntarios)
+            .ThenInclude(x => x.Voluntario)
+            .FirstOrDefaultAsync(x => x.Id == Id);
     }
 
     public void Adicionar(Atividade entity)
