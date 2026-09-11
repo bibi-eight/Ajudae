@@ -29,6 +29,7 @@ public class Voluntario : Entity, IAggregateRoot
         Telefone = telefone;
         AreaVoluntariado = areaVoluntariado;
         ModeloDeTrabalho = modelo;
+        Ativo = true;
     }
     
     public void AtribuirNomeCompleto(string nomeCompleto) => NomeCompleto = nomeCompleto;

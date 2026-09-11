@@ -3,7 +3,7 @@ using Ajudae.Domain.Enums;
 
 namespace Ajudae.App.Models;
 
-public class VoluntarioModel
+public class VoluntarioCadastroModel
 {
     [Required(ErrorMessage = "O campo {0} é obrigatório")]
     public string NomeCompleto { get; set; }
@@ -19,6 +19,19 @@ public class VoluntarioModel
     
     public ModeloDeTrabalhoEnum ModeloDeTrabalho { get; set; }
     public bool Ativo { get; set; }
+}
+
+public class VoluntarioDadosPrincipaisModel
+{
+    [Required(ErrorMessage = "O campo {0} é obrigatório")]
+    public string NomeCompleto { get; set; }
+    
+    [Required(ErrorMessage = "O campo {0} é obrigatório")]
+    public string Email { get; set; }
+    
+    [Required(ErrorMessage = "O campo {0} é obrigatório")]
+    public string Telefone { get; set; }
+    
 }
 
 public class ModeloDeTrabalhoModel

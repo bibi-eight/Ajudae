@@ -23,12 +23,12 @@ public class VoluntarioController : MainController
     }
 
     [HttpPost]
-    public async Task<IActionResult> CadastrarVoluntario(VoluntarioModel voluntarioModel)
+    public async Task<IActionResult> CadastrarVoluntario(VoluntarioCadastroModel model)
     {
         if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-        var comando = new AdicionarVoluntarioCommand(voluntarioModel.NomeCompleto, voluntarioModel.Email,
-            voluntarioModel.Telefone, voluntarioModel.AreaVoluntariado, voluntarioModel.ModeloDeTrabalho);
+        var comando = new AdicionarVoluntarioCommand(model.NomeCompleto, model.Email,
+            model.Telefone, model.AreaVoluntariado, model.ModeloDeTrabalho);
         
         var result = await _mediator.EnviarComando(comando);
         
@@ -37,12 +37,12 @@ public class VoluntarioController : MainController
     }
 
     [HttpPut]
-    public async Task<IActionResult> EditarDadosPrincipais(Guid voluntarioId, VoluntarioModel voluntarioModel)
+    public async Task<IActionResult> EditarDadosPrincipais(Guid voluntarioId, VoluntarioDadosPrincipaisModel model)
     {
         if (!ModelState.IsValid) return CustomResponse(ModelState);
         
-        var comando = new EditarVoluntarioCommand(voluntarioId, voluntarioModel.NomeCompleto, voluntarioModel.Email,
-            voluntarioModel.Telefone);
+        var comando = new EditarVoluntarioCommand(voluntarioId, model.NomeCompleto, model.Email,
+            model.Telefone);
         
         var result = await _mediator.EnviarComando(comando);
         
