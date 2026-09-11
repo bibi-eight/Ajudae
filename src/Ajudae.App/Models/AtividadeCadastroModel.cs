@@ -3,7 +3,7 @@ using Ajudae.Domain.Enums;
 
 namespace Ajudae.App.Models;
 
-public class AtividadeModel
+public class AtividadeCadastroModel
 {
     [Required(ErrorMessage = "O campo {0} é obrigatório")]
     public string Titulo { get; set; }
@@ -15,6 +15,19 @@ public class AtividadeModel
     [MinLength(1)]
     public int Pontos { get; set; }
     public string Prazo { get; set; }
+}
+
+public class AtividadeEdicaoModel
+{
+    [Required(ErrorMessage = "O campo {0} é obrigatório")]
+    public string Titulo { get; set; }
+    
+    [Required(ErrorMessage = "O campo {0} é obrigatório")]
+    public string Descricao { get; set; }
+    
+    [Required(ErrorMessage = "O valor mínimo de pontos é 1")]
+    [MinLength(1)]
+    public int Pontos { get; set; }
 }
 
 public class AtividadePrazoModel

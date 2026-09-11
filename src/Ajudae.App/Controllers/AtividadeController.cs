@@ -20,7 +20,7 @@ public class AtividadeController : MainController
     }
 
     [HttpPost]
-    public async Task<IActionResult> Adicionar(AtividadeModel model)
+    public async Task<IActionResult> Adicionar(AtividadeCadastroModel model)
     {
         if (!ModelState.IsValid) return CustomResponse(ModelState);
 
@@ -32,7 +32,7 @@ public class AtividadeController : MainController
     }
 
     [HttpPut]
-    public async Task<IActionResult> Editar(Guid atividadeId, AtividadeModel model)
+    public async Task<IActionResult> Editar(Guid atividadeId, AtividadeEdicaoModel model)
     {
         if (!ModelState.IsValid) return CustomResponse(ModelState);
         
@@ -43,7 +43,7 @@ public class AtividadeController : MainController
         return CustomResponse(result);
     }
 
-    [HttpPatch("editar-status")]
+    [HttpPatch("editar-prazo")]
     public async Task<IActionResult> EditarPrazo(Guid atividadeId, AtividadePrazoModel model)
     {
         var atividade = await _atividadeRepository.ObterPorId(atividadeId);
@@ -54,7 +54,7 @@ public class AtividadeController : MainController
             return CustomResponse();
         }
         
-        atividade.AtribuirPrazo(atividade.Prazo);
+        atividade.AtribuirPrazo(DateTime.Parse(model.Prazo));
         
         await _atividadeRepository.UnitOfWork.Commit();
         
