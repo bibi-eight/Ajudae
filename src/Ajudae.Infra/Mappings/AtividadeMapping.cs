@@ -17,7 +17,7 @@ public class AtividadeMapping : IEntityTypeConfiguration<Atividade>
         builder.Property(x => x.Prazo);
         
         builder
-            .HasMany(v => v.voluntarios)
+            .HasMany(v => v.Voluntarios)
             .WithOne(av => av.Atividade)
             .HasForeignKey(av => av.AtividadeId);        
     }
@@ -38,7 +38,7 @@ public class AtividadeVoluntarioMapping : IEntityTypeConfiguration<AtividadeVolu
 
         builder
             .HasOne(av => av.Atividade)
-            .WithMany(a => a.voluntarios)
+            .WithMany(a => a.Voluntarios)
             .HasForeignKey(av => av.AtividadeId);
 
         builder
