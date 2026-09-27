@@ -19,7 +19,10 @@ public class VoluntarioRepository : IVoluntarioRepository
     
     public async Task<Voluntario> ObterPorId(Guid Id)
     {
-        return await _context.Voluntarios.FirstOrDefaultAsync(x => x.Id == Id);
+        return await _context.Voluntarios
+            .Include(x => x.atividades)
+            .ThenInclude(x => x.Atividade)
+            .FirstOrDefaultAsync(x => x.Id == Id);
     }
 
     public void Adicionar(Voluntario entity)
