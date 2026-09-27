@@ -14,12 +14,14 @@ namespace Ajudae.App.Controllers;
 public class VoluntarioController : MainController
 {
     private readonly IMediatorHandler _mediator;
-    private readonly IVoluntarioRepository _voluntarioRepository;   
+    private readonly IVoluntarioRepository _voluntarioRepository;
+    private readonly IAtividadeRepository _atividadeRepository;
 
-    public VoluntarioController(IMediatorHandler mediator, IVoluntarioRepository voluntarioRepository)
+    public VoluntarioController(IMediatorHandler mediator, IVoluntarioRepository voluntarioRepository, IAtividadeRepository atividadeRepository)
     {
         _mediator = mediator;
         _voluntarioRepository = voluntarioRepository;
+        _atividadeRepository = atividadeRepository;
     }
 
     [HttpPost]
@@ -135,5 +137,31 @@ public class VoluntarioController : MainController
         
         return CustomResponse(result);
     }
-    
+
+    [HttpPost("adicionar-atividade")]
+    public async Task<IActionResult> AdicionarAtividade(Guid voluntarioId, Guid atividadeId)
+    {
+        var voluntario = await _voluntarioRepository.ObterPorId(voluntarioId);
+
+        if (voluntario is null)
+        {
+            AdicionarErro("Voluntário não encontrado");
+            return CustomResponse();
+        }
+        
+        var atividade = await _atividadeRepository.ObterPorId(atividadeId);
+
+        if (atividade is null)
+        {
+            AdicionarErro("Atividade não encontrada");
+            return CustomResponse();
+        }
+        
+        atividade.AdicionarVoluntario(voluntarioId);
+        
+        await _atividadeRepository.SalvarAlteracoesAsync();
+
+        return CustomResponse();
+        
+    }
 }

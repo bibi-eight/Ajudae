@@ -10,5 +10,6 @@ public interface IAtividadeRepository : IRepository<Atividade>
     void ExcluirRecompensa(Guid recompensaId);
     Task<bool> ExisteAtividade(string Titulo);
     Task<IEnumerable<AtividadeVoluntario>> ObterAtividadesPorVolutario(Guid voluntarioId);
+    Task SalvarAlteracoesAsync();
     
 }

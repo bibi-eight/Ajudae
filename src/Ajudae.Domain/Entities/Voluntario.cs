@@ -40,20 +40,7 @@ public class Voluntario : Entity, IAggregateRoot
     public void AtribuirModeloDeTrabalho(ModeloDeTrabalhoEnum modeloDeTrabalho) => ModeloDeTrabalho = modeloDeTrabalho;
     public void AtivarVoluntario() => Ativo = true;
     public void DesativarVoluntario() => Ativo = false;
-
-    public void AdicionarAtividade(AtividadeVoluntario atividade)
-    {
-        atividades.Add(atividade);
-        
-        atividade.AtribuirStatus(StatusEnum.Pendente);
-    }
     
-    public void RemoverAtividade(AtividadeVoluntario atividade)
-    {
-        atividades.Remove(atividade);
-        
-        atividade.AtribuirStatus(StatusEnum.Nova);
-    }
     public void AdicionarRecompensa(Recompensa recompensa)
     {
         recompensas.Add(recompensa);

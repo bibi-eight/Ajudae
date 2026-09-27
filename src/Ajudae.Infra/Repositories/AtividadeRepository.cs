@@ -75,6 +75,11 @@ public class AtividadeRepository : IAtividadeRepository
         var atividade = _context.Atividades.FirstOrDefault(predicate);
         _context.Atividades.Remove(atividade);
     }
+    
+    public async Task SalvarAlteracoesAsync()
+    {
+        await _context.SaveChangesAsync();
+    }
 
     public void Dispose()
     {
