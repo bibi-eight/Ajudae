@@ -26,6 +26,15 @@ public class AtividadeRepository : IAtividadeRepository
             .Where(x => x.Status == (StatusEnum)status)
             .ToListAsync();
     }
+    
+    public async Task<IEnumerable<AtividadeVoluntario>> ObterAtividadesPorVolutario(Guid voluntarioId)
+    {
+        return await _context.AtividadeVoluntarios
+            .Include(x => x.Atividade)
+            .ThenInclude(x => x.Voluntarios)
+            .Where(x => x.VoluntarioId == voluntarioId)
+            .ToListAsync();    
+    }
 
     public void AdicionarRecompensa(Recompensa recompensa)
     {

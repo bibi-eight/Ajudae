@@ -64,18 +64,20 @@ public class AtividadeController : MainController
      [HttpPatch("editar-status")]
      public async Task<IActionResult> EditarStatus(Guid atividadeId, Guid voluntarioId, AtividadeStatusModel model)
      {
-         var atividade = await _atividadeRepository.Ob(atividadeId);
+         var atividades = await _atividadeRepository.ObterAtividadesPorVolutario(voluntarioId);
     
-         if (atividade is null)
+         if (!atividades.Any())
          {
-             AdicionarErro("Atividade não encontrada");
+             AdicionarErro("Nenhuma atividade associada a esse voluntário foi encontrada");
              return CustomResponse();
          }
          
-         atividade.(atividade.Status);
+         var atividadeParaMudanca = atividades.FirstOrDefault(x => x.AtividadeId == atividadeId);
+         
+         atividadeParaMudanca.AtribuirStatus(model.Status);
          
          await _atividadeRepository.UnitOfWork.Commit();
          
-         return CustomResponse(atividade);
+         return CustomResponse();
      }
 }
