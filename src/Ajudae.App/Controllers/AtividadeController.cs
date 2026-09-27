@@ -61,22 +61,21 @@ public class AtividadeController : MainController
         return CustomResponse(atividade);
     }
     
-    //TODO:     corrigir endpoint de edição de status obtendo tarefas de outra tabela
-    // [HttpPatch("editar-status")]
-    // public async Task<IActionResult> EditarStatus(Guid atividadeId, AtividadeStatusModel model)
-    // {
-    //     var atividade = await _atividadeRepository.ObterPorId(atividadeId);
-    //
-    //     if (atividade is null)
-    //     {
-    //         AdicionarErro("Atividade não encontrada");
-    //         return CustomResponse();
-    //     }
-    //     
-    //     atividade.(atividade.Status);
-    //     
-    //     await _atividadeRepository.UnitOfWork.Commit();
-    //     
-    //     return CustomResponse(atividade);
-    // }
+     [HttpPatch("editar-status")]
+     public async Task<IActionResult> EditarStatus(Guid atividadeId, Guid voluntarioId, AtividadeStatusModel model)
+     {
+         var atividade = await _atividadeRepository.Ob(atividadeId);
+    
+         if (atividade is null)
+         {
+             AdicionarErro("Atividade não encontrada");
+             return CustomResponse();
+         }
+         
+         atividade.(atividade.Status);
+         
+         await _atividadeRepository.UnitOfWork.Commit();
+         
+         return CustomResponse(atividade);
+     }
 }

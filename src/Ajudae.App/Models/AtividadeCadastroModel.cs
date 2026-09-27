@@ -12,7 +12,7 @@ public class AtividadeCadastroModel
     public string Descricao { get; set; }
     
     [Required(ErrorMessage = "O valor mínimo de pontos é 1")]
-    [MinLength(1)]
+    [Range(1, 100)]    
     public int Pontos { get; set; }
     public string Prazo { get; set; }
 }
