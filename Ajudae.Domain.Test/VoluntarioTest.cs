@@ -96,7 +96,7 @@ public class VoluntarioTest
         {
             // Arrange
             var voluntario = new Voluntario();
-            voluntario.AtivarVoluntario(); 
+            voluntario.AtivarVoluntario();
 
             // Act
             voluntario.DesativarVoluntario();
@@ -104,38 +104,6 @@ public class VoluntarioTest
             // Assert
             Assert.False(voluntario.Ativo);
         }
-
-        //TODO: refazer testes dentro do novo contexto
-        // [Fact]
-        // public void AdicionarAtividade_DeveAdicionarNaLista_E_MudarStatusParaPendente()
-        // {
-        //     // Arrange
-        //     var voluntario = new Voluntario();
-        //     var atividade = new AtividadeVoluntario();
-        //
-        //     // Act
-        //     voluntario.AdicionarAtividade(atividade);
-        //
-        //     // Assert
-        //     Assert.Contains(atividade, voluntario.atividades);
-        //     Assert.Equal(StatusEnum.Pendente, atividade.Status); 
-        // }
-        //
-        // [Fact]
-        // public void RemoverAtividade_DeveRemoverDaLista_E_MudarStatusParaNova()
-        // {
-        //     // Arrange
-        //     var voluntario = new Voluntario();
-        //     var atividade = new AtividadeVoluntario();
-        //     voluntario.AdicionarAtividade(atividade); 
-        //
-        //     // Act
-        //     voluntario.RemoverAtividade(atividade);
-        //
-        //     // Assert
-        //     Assert.DoesNotContain(atividade, voluntario.atividades);
-        //     Assert.Equal(StatusEnum.Nova, atividade.Status);
-        // }
 
         [Fact]
         public void AdicionarRecompensa_DeveAdicionarNaLista()
