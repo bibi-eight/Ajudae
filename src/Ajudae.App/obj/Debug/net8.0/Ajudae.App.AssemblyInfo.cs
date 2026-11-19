@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ajudae.App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e57186297243b130bc307c70fd92f605ded66bfb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67d5653d425b3c74376b8df2e0896772b4e722ee")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ajudae.App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ajudae.App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
